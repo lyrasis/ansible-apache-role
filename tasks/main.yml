@@ -1,0 +1,8 @@
+---
+
+ - name: Install apache httpd and required modules
+   apt: name={{ item }} state=present
+   with_items:
+     - apache2
+
+
