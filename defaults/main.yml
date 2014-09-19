@@ -1,0 +1,10 @@
+---
+apache_timeout: "300"
+apache_startservers: "5"
+apache_minspareservers: "5"
+apache_maxspareservers: "10"
+apache_maxclients: "50"
+apache_maxreqsperchild: "3000"
+apache_keepalivetimeout: "5"
+apache_maxkeepaliverequests: "100"
+apache_keepalive: "On"
