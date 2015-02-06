@@ -21,7 +21,7 @@
      - proxy
      - proxy_http
      - ssl
-     - mod-evasive
+     # - mod-evasive
    notify: restart apache
    tags:
      - apache
