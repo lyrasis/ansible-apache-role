@@ -37,7 +37,7 @@ KeepAliveTimeout {{ apache_keepalivetimeout }}
 
 ##
 ## Server-Pool Size Regulation (MPM specific)
-## 
+##
 
 # prefork MPM
 # StartServers: number of server processes to start
@@ -66,7 +66,7 @@ KeepAliveTimeout {{ apache_keepalivetimeout }}
 <IfModule mpm_worker_module>
     StartServers          2
     MinSpareThreads      25
-    MaxSpareThreads      75 
+    MaxSpareThreads      75
     ThreadLimit          64
     ThreadsPerChild      25
     MaxClients          150
@@ -83,7 +83,7 @@ KeepAliveTimeout {{ apache_keepalivetimeout }}
 <IfModule mpm_event_module>
     StartServers          2
     MinSpareThreads      25
-    MaxSpareThreads      75 
+    MaxSpareThreads      75
     ThreadLimit          64
     ThreadsPerChild      25
     MaxClients          150
@@ -103,8 +103,8 @@ Group ${APACHE_RUN_GROUP}
 AccessFileName .htaccess
 
 #
-# The following lines prevent .htaccess and .htpasswd files from being 
-# viewed by Web clients. 
+# The following lines prevent .htaccess and .htpasswd files from being
+# viewed by Web clients.
 #
 <Files ~ "^\.ht">
     Order allow,deny
