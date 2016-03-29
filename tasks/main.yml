@@ -4,13 +4,6 @@
    apt: name={{ item }} state=present
    with_items:
      - apache2
-     - libapache2-mod-evasive
-   tags:
-     - apache
-
- - name: Drop the mod-evasive.conf file in place
-   template: src=mod-evasive.conf.j2 dest=/etc/apache2/mods-available/mod-evasive.conf
-    owner=root group=root mode=644
    tags:
      - apache
 
@@ -21,7 +14,6 @@
      - proxy
      - proxy_http
      - ssl
-     # - mod-evasive
    notify: restart apache
    tags:
      - apache
