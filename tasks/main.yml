@@ -16,6 +16,7 @@
     - proxy
     - proxy_http
     - ssl
+    - status
   notify: restart apache
   tags:
     - apache
