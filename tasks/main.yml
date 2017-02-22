@@ -27,6 +27,18 @@
   tags:
     - apache
 
+- name: Drop the mpm_prefork.conf in place and restart Apache
+  template:
+    src: mpm_prefork.conf.j2
+    dest: /etc/apache2/mods-available/mpm_prefork.conf
+    owner: root
+    group: root
+    mode: "644"
+    backup: yes
+  notify: restart apache
+  tags:
+    - apache
+
 - name: Drop the apache2.conf in place and restart Apache
   template:
     src: apache2.conf.j2
