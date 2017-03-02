@@ -1,9 +1,9 @@
 ---
 apache_timeout: "300"
-apache_startservers: "5"
-apache_minspareservers: "5"
-apache_maxspareservers: "10"
-apache_maxrequestworkers: "50"
+apache_startservers: "15"
+apache_minspareservers: "15"
+apache_maxspareservers: "30"
+apache_maxrequestworkers: "150"
 apache_maxconnsperchild: "3000"
 apache_keepalivetimeout: "5"
 apache_maxkeepaliverequests: "100"
