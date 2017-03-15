@@ -17,13 +17,8 @@
   apache2_module:
     state: present
     name: "{{item}}"
-  with_items:
-    - rewrite
-    - proxy
-    - proxy_http
-    - ssl
-    - status
-  notify: restart apache
+  with_items: "{{ apache_modules }}"
+  notify: apache role restart apache
   tags:
     - apache
 
@@ -35,7 +30,7 @@
     group: root
     mode: "644"
     backup: yes
-  notify: restart apache
+  notify: apache role restart apache
   tags:
     - apache
 
@@ -47,6 +42,18 @@
     group: root
     mode: "644"
     backup: yes
-  notify: restart apache
+  notify: apache role restart apache
+  tags:
+    - apache
+
+- name: Drop the ports.conf in place and restart Apache
+  template:
+    src: ports.conf.j2
+    dest: /etc/apache2/ports.conf
+    owner: root
+    group: root
+    mode: "644"
+    backup: yes
+  notify: apache role restart apache
   tags:
     - apache
