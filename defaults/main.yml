@@ -10,7 +10,7 @@ apache_maxkeepaliverequests: "100"
 apache_keepalive: "On"
 apache_servername: "localhost"
 apache_http_port: "80"
-apache_https_port: "80"
+apache_https_port: "443"
 apache_modules:
   - rewrite
   - proxy
