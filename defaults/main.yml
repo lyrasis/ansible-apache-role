@@ -1,0 +1,11 @@
+---
+apache_timeout: "300"
+apache_startservers: "15"
+apache_minspareservers: "15"
+apache_maxspareservers: "30"
+apache_maxrequestworkers: "150"
+apache_maxconnsperchild: "3000"
+apache_keepalivetimeout: "5"
+apache_maxkeepaliverequests: "100"
+apache_keepalive: "On"
+apache_servername: "localhost"
