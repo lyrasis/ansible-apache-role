@@ -4,7 +4,7 @@ Apache role
 [![Build Status](https://travis-ci.org/lyrasis/ansible-apache-role.svg?branch=master)](https://travis-ci.org/lyrasis/ansible-apache-role)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Install a Apache2 server.
+Install a Apache2 server on Ubuntu 16.04.
 
 Variables
 ---------
