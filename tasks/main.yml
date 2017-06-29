@@ -18,7 +18,7 @@
     state: present
     name: "{{item}}"
   with_items: "{{ apache_modules }}"
-  notify: apache role restart apache
+  notify: restart apache
   tags:
     - apache
 
@@ -30,7 +30,7 @@
     group: root
     mode: "644"
     backup: yes
-  notify: apache role restart apache
+  notify: restart apache
   tags:
     - apache
 
@@ -42,7 +42,7 @@
     group: root
     mode: "644"
     backup: yes
-  notify: apache role restart apache
+  notify: restart apache
   tags:
     - apache
 
@@ -54,6 +54,6 @@
     group: root
     mode: "644"
     backup: yes
-  notify: apache role restart apache
+  notify: restart apache
   tags:
     - apache
