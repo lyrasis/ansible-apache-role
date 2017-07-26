@@ -1,0 +1,7 @@
+---
+
+- name: Install logrotate template
+  template:
+    src: logrotate.j2
+    dest: /etc/logrotate.d/apache2
+

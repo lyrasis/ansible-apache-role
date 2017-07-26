@@ -1,59 +1,16 @@
 ---
 
-- name: Install apache httpd and required modules
-  apt:
-    name: apache2
-    state: present
+- include: install.yml
   tags:
     - apache
+    - apache-install
 
-- name: automatically start apache
-  service:
-    name: apache2
-    state: started
-    enabled: yes
-
-- name: Enable required apache modules
-  apache2_module:
-    state: present
-    name: "{{item}}"
-  with_items: "{{ apache_modules }}"
-  notify: restart apache
+- include: config.yml
   tags:
     - apache
+    - apache-config
 
-- name: Drop the mpm_prefork.conf in place and restart Apache
-  template:
-    src: mpm_prefork.conf.j2
-    dest: /etc/apache2/mods-available/mpm_prefork.conf
-    owner: root
-    group: root
-    mode: "644"
-    backup: yes
-  notify: restart apache
+- include: logging.yml
   tags:
     - apache
-
-- name: Drop the apache2.conf in place and restart Apache
-  template:
-    src: apache2.conf.j2
-    dest: /etc/apache2/apache2.conf
-    owner: root
-    group: root
-    mode: "644"
-    backup: yes
-  notify: restart apache
-  tags:
-    - apache
-
-- name: Drop the ports.conf in place and restart Apache
-  template:
-    src: ports.conf.j2
-    dest: /etc/apache2/ports.conf
-    owner: root
-    group: root
-    mode: "644"
-    backup: yes
-  notify: restart apache
-  tags:
-    - apache
+    - apache-logging
