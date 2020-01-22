@@ -17,6 +17,7 @@ apache_modules:
   - proxy_http
   - ssl
   - status
+  - reqtimeout
 
 apache_logrotate_frequency: weekly
 apache_logrotate_number: 60
