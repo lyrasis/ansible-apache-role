@@ -18,6 +18,9 @@ apache_modules:
   - ssl
   - status
   - reqtimeout
+apache_loglevel: warn
+
 
 apache_logrotate_frequency: weekly
 apache_logrotate_number: 60
+
